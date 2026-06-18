@@ -39,7 +39,7 @@ export default function ProductsPage({ params }) {
                   </div>
                   <span className="ct-meta">{items.length} {items.length === 1 ? p.model : p.models}</span>
                 </div>
-                <div className="prod-grid cols-3">
+                <div className="prod-grid">
                   {items.map((item) => <ProductCard key={item.slug} p={item} />)}
                 </div>
               </div>

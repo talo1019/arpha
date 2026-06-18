@@ -63,8 +63,8 @@ export default function Home({ params }) {
             <div>
               <span className="eyebrow">{t.products.eyebrow}</span>
               <h2 className="h2">{t.products.heading}</h2>
+              <p style={{ marginTop: "12px", color: "var(--muted)" }}>{t.products.sub}</p>
             </div>
-            <p>{t.products.sub}</p>
           </div>
           <div className="prod-grid">
             {featured.map((p) => <ProductCard key={p.slug} p={p} />)}
@@ -82,8 +82,8 @@ export default function Home({ params }) {
             <div>
               <span className="eyebrow">{t.unlock.eyebrow}</span>
               <h2 className="h2">{t.unlock.heading1}<br />{t.unlock.heading2}</h2>
+              <p style={{ marginTop: "12px", color: "var(--muted)" }}>{t.unlock.sub}</p>
             </div>
-            <p>{t.unlock.sub}</p>
           </div>
           <div className="unlock-grid">
             {t.unlock.items.map((item, i) => {
