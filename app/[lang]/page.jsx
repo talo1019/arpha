@@ -59,12 +59,10 @@ export default function Home({ params }) {
       {/* products */}
       <section className="block" id="locks">
         <div className="wrap">
-          <div className="sec-head reveal">
-            <div>
-              <span className="eyebrow">{t.products.eyebrow}</span>
-              <h2 className="h2">{t.products.heading}</h2>
-              <p style={{ marginTop: "12px", color: "var(--muted)" }}>{t.products.sub}</p>
-            </div>
+          <div className="reveal" style={{ textAlign: "center", marginBottom: "50px" }}>
+            <span className="eyebrow center">{t.products.eyebrow}</span>
+            <h2 className="h2" style={{ marginTop: "14px" }}>{t.products.heading}</h2>
+            <p style={{ color: "var(--muted)", marginTop: "12px", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>{t.products.sub}</p>
           </div>
           <div className="prod-grid">
             {featured.map((p) => <ProductCard key={p.slug} p={p} />)}
@@ -78,12 +76,10 @@ export default function Home({ params }) {
       {/* unlock methods */}
       <section className="block unlock" id="unlock">
         <div className="wrap">
-          <div className="sec-head reveal">
-            <div>
-              <span className="eyebrow">{t.unlock.eyebrow}</span>
-              <h2 className="h2">{t.unlock.heading1}<br />{t.unlock.heading2}</h2>
-              <p style={{ marginTop: "12px", color: "var(--muted)" }}>{t.unlock.sub}</p>
-            </div>
+          <div className="reveal" style={{ textAlign: "center", marginBottom: "50px" }}>
+            <span className="eyebrow center">{t.unlock.eyebrow}</span>
+            <h2 className="h2" style={{ marginTop: "14px" }}>{t.unlock.heading1}<br />{t.unlock.heading2}</h2>
+            <p style={{ color: "var(--muted)", marginTop: "12px", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>{t.unlock.sub}</p>
           </div>
           <div className="unlock-grid">
             {t.unlock.items.map((item, i) => {
@@ -139,9 +135,10 @@ export default function Home({ params }) {
       {/* standards */}
       <section className="block" id="standards">
         <div className="wrap">
-          <div className="sec-head reveal">
-            <div><span className="eyebrow">{t.standards.eyebrow}</span><h2 className="h2">{t.standards.heading}</h2></div>
-            <p>{t.standards.sub}</p>
+          <div className="reveal" style={{ textAlign: "center", marginBottom: "50px" }}>
+            <span className="eyebrow center">{t.standards.eyebrow}</span>
+            <h2 className="h2" style={{ marginTop: "14px" }}>{t.standards.heading}</h2>
+            <p style={{ color: "var(--muted)", marginTop: "12px", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>{t.standards.sub}</p>
           </div>
           <div className="std-grid">
             {t.standards.items.map((item, i) => {
@@ -157,9 +154,10 @@ export default function Home({ params }) {
       {/* use cases */}
       <section className="block uses" id="uses">
         <div className="wrap">
-          <div className="sec-head reveal">
-            <div><span className="eyebrow">{t.uses.eyebrow}</span><h2 className="h2">{t.uses.heading}</h2></div>
-            <p>{t.uses.sub}</p>
+          <div className="reveal" style={{ textAlign: "center", marginBottom: "50px" }}>
+            <span className="eyebrow center">{t.uses.eyebrow}</span>
+            <h2 className="h2" style={{ marginTop: "14px" }}>{t.uses.heading}</h2>
+            <p style={{ color: "var(--muted)", marginTop: "12px", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>{t.uses.sub}</p>
           </div>
           <div className="use-grid">
             {t.uses.items.map((item, i) => (
