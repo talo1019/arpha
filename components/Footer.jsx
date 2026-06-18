@@ -24,15 +24,14 @@ export default function Footer({ dict }) {
             <LocaleLink href="/products">{dict.company.products}</LocaleLink>
             <LocaleLink href="/plans">{dict.company.plans}</LocaleLink>
             <LocaleLink href="/accessories">{dict.company.accessories}</LocaleLink>
-            <LocaleLink href="/support">{dict.company.support}</LocaleLink>
           </div>
 
           <div className="fcol">
             <h4>{dict.products.heading}</h4>
-            <LocaleLink href="/products">{dict.products.locks}</LocaleLink>
-            <LocaleLink href="/products">{dict.products.doorbells}</LocaleLink>
-            <LocaleLink href="/products">{dict.products.cameras}</LocaleLink>
-            <LocaleLink href="/products">{dict.products.dashcams}</LocaleLink>
+            <LocaleLink href="/products#smart-lock">{dict.products.locks}</LocaleLink>
+            <LocaleLink href="/products#doorbell">{dict.products.doorbells}</LocaleLink>
+            <LocaleLink href="/products#ip-camera">{dict.products.cameras}</LocaleLink>
+            <LocaleLink href="/products#dash-cam">{dict.products.dashcams}</LocaleLink>
             <LocaleLink href="/accessories">{dict.products.accessories}</LocaleLink>
           </div>
 
@@ -56,10 +55,9 @@ export default function Footer({ dict }) {
         <div className="foot-bot">
           <p>{dict.copyright}</p>
           <div className="links">
-            <a href="#">{dict.legal.privacy}</a>
-            <a href="#">{dict.legal.terms}</a>
-            <a href="#">{dict.legal.shipping}</a>
-            <a href="#">{dict.legal.cookies}</a>
+            <LocaleLink href="/privacy">{dict.legal.privacy}</LocaleLink>
+            <LocaleLink href="/terms">{dict.legal.terms}</LocaleLink>
+            <LocaleLink href="/warranty">{dict.legal.shipping}</LocaleLink>
           </div>
         </div>
       </div>

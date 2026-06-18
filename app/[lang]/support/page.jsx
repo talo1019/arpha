@@ -1,7 +1,7 @@
 import LocaleLink from "@/components/LocaleLink";
 import Accordion from "@/components/Accordion";
 import {
-  Search, Wrench, Doc, ShieldCheck, Phone, Book, Globe,
+  Wrench, Doc, ShieldCheck, Phone, Book, Globe,
   ArrowRight, Headset, Clock,
 } from "@/components/Icons";
 import { getDictionary } from "@/lib/i18n";
@@ -27,11 +27,21 @@ export default function SupportPage({ params }) {
           <span className="eyebrow" style={{ marginTop: "18px" }}>{s.eyebrow}</span>
           <h1>{s.heading}</h1>
           <p>{s.sub}</p>
-          <div className="sup-search">
-            <Search style={{ width: "18px", height: "18px", color: "var(--muted)" }} />
-            <input type="text" placeholder={s.searchPlaceholder} aria-label={s.searchPlaceholder} />
-            <button className="btn btn--bronze">{s.searchBtn}</button>
-          </div>
+          <form className="sup-form" action="https://support.arpha.com" method="get" target="_blank">
+            <div className="sup-form-row">
+              <label htmlFor="sup-name">{s.form.nameLabel}</label>
+              <input id="sup-name" name="name" type="text" placeholder={s.form.namePlaceholder} required />
+            </div>
+            <div className="sup-form-row">
+              <label htmlFor="sup-email">{s.form.emailLabel}</label>
+              <input id="sup-email" name="email" type="email" placeholder={s.form.emailPlaceholder} required />
+            </div>
+            <div className="sup-form-row">
+              <label htmlFor="sup-issue">{s.form.issueLabel}</label>
+              <textarea id="sup-issue" name="issue" rows={4} placeholder={s.form.issuePlaceholder} required />
+            </div>
+            <button type="submit" className="btn btn--bronze">{s.form.submit}</button>
+          </form>
         </div>
       </section>
 
@@ -41,12 +51,12 @@ export default function SupportPage({ params }) {
             {s.tiles.map((tile, i) => {
               const Icon = TILE_ICONS[i];
               return (
-                <div className="sup-tile reveal" key={tile.title}>
+                <a className="sup-tile reveal" key={tile.title} href="https://support.arpha.com" target="_blank" rel="noopener noreferrer">
                   <div className="ico">{Icon && <Icon />}</div>
                   <h3>{tile.title}</h3>
                   <p>{tile.desc}</p>
                   <span className="lk">{tile.link} <ArrowRight /></span>
-                </div>
+                </a>
               );
             })}
           </div>

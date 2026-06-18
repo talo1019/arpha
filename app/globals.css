@@ -430,8 +430,16 @@ section.block{padding:clamp(70px,9vw,118px) 0}
 /* support */
 .sup-search{background:var(--surface);border:1px solid var(--line);border-radius:100px;display:flex;align-items:center;gap:12px;padding:6px 6px 6px 22px;max-width:560px;margin-top:30px;position:relative;z-index:2}
 .sup-search input{flex:1;border:none;background:transparent;font-family:var(--body);font-size:1rem;outline:none;color:var(--ink)}
+.sup-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:560px;margin-top:30px;position:relative;z-index:2}
+.sup-form-row{display:flex;flex-direction:column;gap:6px}
+.sup-form-row:last-of-type{grid-column:1/-1}
+.sup-form label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.sup-form input,.sup-form textarea{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 14px;font-family:var(--body);font-size:.95rem;color:#fff;outline:none;resize:none;transition:border-color .2s}
+.sup-form input::placeholder,.sup-form textarea::placeholder{color:rgba(255,255,255,.35)}
+.sup-form input:focus,.sup-form textarea:focus{border-color:var(--bronze)}
+.sup-form>.btn{grid-column:1/-1;justify-self:start}
 .sup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.sup-tile{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:32px 28px;transition:.35s var(--ease)}
+.sup-tile{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:32px 28px;transition:.35s var(--ease);text-decoration:none;color:inherit;display:block}
 .sup-tile:hover{border-color:var(--bronze);transform:translateY(-4px)}
 .sup-tile .ico{width:42px;height:42px;color:var(--bronze-deep);margin-bottom:18px}
 .sup-tile .ico svg{width:100%;height:100%}
@@ -439,6 +447,19 @@ section.block{padding:clamp(70px,9vw,118px) 0}
 .sup-tile p{font-size:.9rem;color:var(--muted);margin:8px 0 14px}
 .sup-tile .lk{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--bronze-deep);display:inline-flex;gap:6px;align-items:center}
 .sup-tile .lk svg{width:13px;height:13px}
+
+/* legal pages */
+.legal-body{max-width:740px;line-height:1.8;font-size:1rem;color:var(--ink)}
+.legal-body h2{font-size:1.18rem;margin:2.4rem 0 .6rem;padding-top:1.4rem;border-top:1px solid var(--line-soft)}
+.legal-body h3{font-size:1rem;font-weight:700;margin:1.4rem 0 .5rem}
+.legal-body p{margin:.6rem 0 1rem}
+.legal-body ol,.legal-body ul{margin:.4rem 0 1rem;padding-left:1.6rem}
+.legal-body li{margin-bottom:.4rem}
+.legal-body a{color:var(--bronze-deep);text-decoration:underline}
+.legal-notice{background:var(--panel);border-left:3px solid var(--bronze);border-radius:4px;padding:16px 20px;margin:1.2rem 0;font-size:.9rem;line-height:1.7}
+.legal-notice p{margin:.4rem 0}
+.legal-dl dt{font-weight:700;margin-top:1rem}
+.legal-dl dd{margin:0 0 .6rem 0;color:var(--muted)}
 
 /* faq accordion */
 .faq{max-width:780px;margin:0 auto}

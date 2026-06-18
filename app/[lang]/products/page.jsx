@@ -31,7 +31,7 @@ export default function ProductsPage({ params }) {
             if (!items.length) return null;
             const catT = p.categories?.[cat.key] || cat;
             return (
-              <div className="cat-block" key={cat.key}>
+              <div className="cat-block" key={cat.key} id={cat.key.toLowerCase().replace(/\s+/g, "-")}>
                 <div className="cat-title reveal">
                   <div>
                     <h2>{catT.label}</h2>
