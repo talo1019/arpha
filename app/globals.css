@@ -244,7 +244,7 @@ section.block{padding:clamp(70px,9vw,118px) 0}
 .unlock{background:var(--surface)}
 .unlock-showcase{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
 .us-img-panel{position:relative;background:#000;aspect-ratio:1/1}
-.us-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .45s var(--ease)}
+.us-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s var(--ease)}
 .us-img.vis{opacity:1}
 .us-list{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--line)}
 .us-row{padding:22px 18px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);cursor:default;transition:background .15s;position:relative}

@@ -5,7 +5,7 @@ import * as Icons from '@/components/Icons'
 const ICON_NAMES = ['Face', 'Palm', 'Fingerprint', 'Keypad', 'Phone', 'Nfc', 'Card', 'Voice', 'Key']
 
 const IMAGES = [
-  '/products/unlock-face.jpg',  // 3D Face
+  '/products/unlockface.jpg',   // 3D Face
   '/products/Palm scan 2.jpg',  // Palm Vein
   '/products/df360.jpg',        // Fingerprint
   '/products/falsepassword.jpg', // Passcode
@@ -13,7 +13,7 @@ const IMAGES = [
   '/products/df360.jpg',   // NFC & Tap
   '/products/SF302.png',   // IC Card
   '/products/SF302.png',   // Voice
-  '/products/df360.jpg',   // Backup Key
+  '/products/key.jpg',     // Backup Key
 ]
 
 export default function UnlockShowcase({ items }) {
