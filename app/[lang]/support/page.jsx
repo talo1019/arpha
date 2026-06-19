@@ -26,7 +26,7 @@ export default function SupportPage({ params }) {
           </div>
           <span className="eyebrow" style={{ marginTop: "18px" }}>{s.eyebrow}</span>
           <h1>{s.heading}</h1>
-          <p>{s.sub}</p>
+          <p>Browse setup guides <a href={s.subLink} target="_blank" rel="noopener noreferrer" style={{ color: "var(--bronze-light)", textDecoration: "underline" }}>here</a>, fill in the form below — we&apos;re here before and after you buy.</p>
           <form className="sup-form" action="https://support.arpha.com" method="get" target="_blank">
             <div className="sup-form-row">
               <label htmlFor="sup-name">{s.form.nameLabel}</label>

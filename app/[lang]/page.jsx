@@ -4,15 +4,15 @@ import ProductCard from "@/components/ProductCard";
 import { PRODUCTS } from "@/lib/products";
 import { getDictionary } from "@/lib/i18n";
 import {
-  ArrowRight, Face, Palm, Fingerprint, Keypad, Phone, Nfc, Card, Voice, Key,
-  ShieldCheck, Weather, Lock2fa, Doc, Globe, Check, Battery, Headset,
+  ArrowRight, ShieldCheck, Weather, Lock2fa, Doc, Globe, Check, Battery, Headset,
 } from "@/components/Icons";
+import UnlockShowcase from "@/components/UnlockShowcase";
+import UsesShowcase from "@/components/UsesShowcase";
 
 const featured = ["uvo-2", "duo", "battery-k25", "m660"]
   .map((s) => PRODUCTS.find((p) => p.slug === s))
   .filter(Boolean);
 
-const UNLOCK_ICONS = [Face, Palm, Fingerprint, Keypad, Phone, Nfc, Card, Voice, Key];
 const STD_ICONS = [ShieldCheck, Weather, Lock2fa, Doc];
 const TRUST_ICONS = [Globe, Check, Battery, Headset];
 
@@ -81,20 +81,7 @@ export default function Home({ params }) {
             <h2 className="h2" style={{ marginTop: "14px" }}>{t.unlock.heading1}<br />{t.unlock.heading2}</h2>
             <p style={{ color: "var(--muted)", marginTop: "12px", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>{t.unlock.sub}</p>
           </div>
-          <div className="unlock-grid">
-            {t.unlock.items.map((item, i) => {
-              const Icon = UNLOCK_ICONS[i];
-              const n = String(i + 1).padStart(2, "0");
-              return (
-                <div className="um reveal" key={n}>
-                  <span className="n">{n}</span>
-                  <div className="ico"><Icon /></div>
-                  <h3>{item.title}</h3>
-                  <p>{item.body}</p>
-                </div>
-              );
-            })}
-          </div>
+          <UnlockShowcase items={t.unlock.items} />
         </div>
       </section>
 
@@ -159,14 +146,7 @@ export default function Home({ params }) {
             <h2 className="h2" style={{ marginTop: "14px" }}>{t.uses.heading}</h2>
             <p style={{ color: "var(--muted)", marginTop: "12px", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>{t.uses.sub}</p>
           </div>
-          <div className="use-grid">
-            {t.uses.items.map((item, i) => (
-              <div className={`use u${i + 1} reveal`} key={i}>
-                <div className="uc"><div className="ut">{item.tag}</div><h3>{item.title}</h3></div>
-                <p>{item.body}</p>
-              </div>
-            ))}
-          </div>
+          <UsesShowcase items={t.uses.items} />
         </div>
       </section>
 
@@ -181,8 +161,8 @@ export default function Home({ params }) {
             <span className="logo-chip">Google <span>Home</span></span>
             <span className="logo-chip">Apple <span>Home</span></span>
             <span className="logo-chip"><span>Tuya</span> Smart</span>
-            <span className="logo-chip">Wi-Fi <span>6</span></span>
-            <span className="logo-chip">Bluetooth <span>5.4</span></span>
+            <span className="logo-chip">Wi-Fi</span>
+            <span className="logo-chip">Bluetooth</span>
             <span className="logo-chip">Arpha <span>Cloud</span></span>
           </div>
         </div>
