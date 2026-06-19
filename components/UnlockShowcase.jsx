@@ -5,11 +5,11 @@ import * as Icons from '@/components/Icons'
 const ICON_NAMES = ['Face', 'Palm', 'Fingerprint', 'Keypad', 'Phone', 'Nfc', 'Card', 'Voice', 'Key']
 
 const IMAGES = [
-  '/products/unlock-face.jpg', // 3D Face
-  '/products/h10.jpg',         // Palm Vein
-  '/products/df360.jpg',   // Fingerprint
-  '/products/L600.png',    // Passcode
-  '/products/df360.jpg',   // App & Remote
+  '/products/unlock-face.jpg',  // 3D Face
+  '/products/Palm scan 2.jpg',  // Palm Vein
+  '/products/df360.jpg',        // Fingerprint
+  '/products/falsepassword.jpg', // Passcode
+  '/products/Package.jpg',      // App & Remote
   '/products/df360.jpg',   // NFC & Tap
   '/products/SF302.png',   // IC Card
   '/products/SF302.png',   // Voice

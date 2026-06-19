@@ -2,9 +2,9 @@
 import { useState } from 'react'
 
 const IMAGES = [
-  '/products/L600.png',               // Families
+  '/products/Kidspalm.jpg',            // Families
   '/products/df360.jpg',              // Renters & hosts
-  '/products/Doorbell duo front.png', // Homes
+  '/products/Remote.jpg',             // Homes
   '/products/h10.jpg',                // Business
   '/products/h10.jpg',                // Apartments
   '/products/M660.png',               // Drivers
