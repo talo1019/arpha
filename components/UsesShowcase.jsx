@@ -22,10 +22,16 @@ export default function UsesShowcase({ items }) {
             className={`uss-row${active === i ? ' active' : ''}`}
             onMouseEnter={() => setActive(i)}
           >
-            <span className="uss-tag">{item.tag}</span>
-            <div className="uss-text">
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
+            {/* Mobile only: image embedded in each slide */}
+            <div className="uss-slide-img">
+              <img src={IMAGES[i]} alt="" aria-hidden="true" />
+            </div>
+            <div className="uss-slide-text">
+              <span className="uss-tag">{item.tag}</span>
+              <div className="uss-text">
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </div>
             </div>
           </div>
         ))}
