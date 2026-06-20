@@ -7,12 +7,12 @@ const ICON_NAMES = ['Face', 'Palm', 'Fingerprint', 'Keypad', 'Phone', 'Nfc', 'Ca
 const IMAGES = [
   '/products/unlockface.jpg',   // 3D Face
   '/products/Palm scan 2.jpg',  // Palm Vein
-  '/products/df360.jpg',        // Fingerprint
+  '/products/akufingerprint.jpg', // Fingerprint
   '/products/falsepassword.jpg', // Passcode
   '/products/Package.jpg',      // App & Remote
   '/products/df360.jpg',   // NFC & Tap
   '/products/SF302.png',   // IC Card
-  '/products/SF302.png',   // Voice
+  '/products/voice control.jpg', // Voice
   '/products/key.jpg',     // Backup Key
 ]
 

@@ -5,7 +5,7 @@ const IMAGES = [
   '/products/Kidspalm.jpg',            // Families
   '/products/df360.jpg',              // Renters & hosts
   '/products/Remote.jpg',             // Homes
-  '/products/h10.jpg',                // Business
+  '/products/manage.jpg',             // Business
   '/products/h10.jpg',                // Apartments
   '/products/M660.png',               // Drivers
 ]
