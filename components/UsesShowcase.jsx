@@ -4,10 +4,10 @@ import { useState } from 'react'
 const IMAGES = [
   '/products/Kidspalm.jpg',            // Families
   '/products/luggage.png',            // Renters & hosts
-  '/products/duress2.jpg',            // Homes
+  '/products/duress3.png',            // Homes
   '/products/manage.jpg',             // Business
   '/products/h10.jpg',                // Apartments
-  '/products/M660.png',               // Drivers
+  '/products/m660.jpg',               // Drivers
 ]
 
 export default function UsesShowcase({ items }) {
