@@ -36,6 +36,9 @@ export const Phone = (p) => (
 export const Nfc = (p) => (
   <svg viewBox="0 0 24 24" {...s} {...p}><path d="M5 9a14 14 0 0 1 14 0M8 12a9 9 0 0 1 8 0M11 15a4 4 0 0 1 2 0" /><circle cx="12" cy="18" r="1" /></svg>
 );
+export const LockClosed = (p) => (
+  <svg viewBox="0 0 24 24" {...s} {...p}><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>
+);
 export const Card = (p) => (
   <svg viewBox="0 0 24 24" {...s} {...p}><rect x="2" y="7" width="20" height="12" rx="2" /><circle cx="8" cy="13" r="2" /><path d="M14 11h5M14 15h5" /></svg>
 );

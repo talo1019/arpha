@@ -2,16 +2,16 @@
 import { useState } from 'react'
 import * as Icons from '@/components/Icons'
 
-const ICON_NAMES = ['Face', 'Palm', 'Fingerprint', 'Keypad', 'Phone', 'Nfc', 'Card', 'Voice', 'Key']
+const ICON_NAMES = ['Face', 'Palm', 'Fingerprint', 'Keypad', 'Phone', 'LockClosed', 'Card', 'Voice', 'Key']
 
 const IMAGES = [
   '/products/unlockface.jpg',   // 3D Face
-  '/products/Palm scan 2.jpg',  // Palm Vein
+  '/products/palmvein.jpg',     // Palm Vein
   '/products/akufingerprint.jpg', // Fingerprint
   '/products/falsepassword.jpg', // Passcode
   '/products/Package.jpg',      // App & Remote
-  '/products/df360.jpg',   // NFC & Tap
-  '/products/SF302.png',   // IC Card
+  '/products/localstorage.jpg', // Local Storage
+  '/products/autolock2.jpg',   // Auto Lock
   '/products/voice control.jpg', // Voice
   '/products/key.jpg',     // Backup Key
 ]
