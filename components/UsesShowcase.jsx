@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 const IMAGES = [
   '/products/Kidspalm.jpg',            // Families
-  '/products/df360.jpg',              // Renters & hosts
+  '/products/luggage.png',            // Renters & hosts
   '/products/duress.jpg',             // Homes
   '/products/manage.jpg',             // Business
   '/products/h10.jpg',                // Apartments
