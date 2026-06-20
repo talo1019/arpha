@@ -296,8 +296,8 @@ section.block{padding:clamp(70px,9vw,118px) 0}
 
 /* use cases */
 .uses{background:var(--panel)}
-.uses-showcase{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:2/1}
-.uss-list{display:flex;flex-direction:column;overflow-y:auto;background:var(--surface)}
+.uses-showcase{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.uss-list{display:flex;flex-direction:column;background:var(--surface)}
 .uss-row{padding:22px 28px;border-bottom:1px solid var(--line);cursor:default;transition:background .15s;position:relative;flex-shrink:0}
 .uss-row:last-child{border-bottom:none}
 .uss-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--bronze);opacity:0;transition:opacity .2s}
