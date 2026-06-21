@@ -5,7 +5,11 @@ import LocaleLink from "./LocaleLink";
 import { Search, Menu, Close, Globe, Check } from "./Icons";
 import { LOCALES, LOCALE_CODES } from "@/lib/i18n";
 
-const CANADIAN_CODES = ["en-ca", "fr-ca"];
+const LOCALE_GROUPS = [
+  { label: "Japan", codes: ["ja", "en-jp"], labels: { "ja": "JP", "en-jp": "EN" } },
+  { label: "Canada", codes: ["en-ca", "fr-ca"], labels: { "en-ca": "EN", "fr-ca": "FR" } },
+];
+const GROUPED_CODES = LOCALE_GROUPS.flatMap((g) => g.codes);
 
 const NAV_KEYS = [
   { href: "/about", key: "about" },
@@ -93,7 +97,7 @@ export default function Nav({ dict, topbar, locale }) {
               </button>
               {langOpen && (
                 <ul className="lang-menu" role="listbox" aria-label={dict.language}>
-                  {LOCALES.filter((l) => !CANADIAN_CODES.includes(l.code)).map((l) => (
+                  {LOCALES.filter((l) => !GROUPED_CODES.includes(l.code)).map((l) => (
                     <li key={l.code} role="option" aria-selected={l.code === locale}>
                       <button
                         className={l.code === locale ? "active" : ""}
@@ -104,19 +108,21 @@ export default function Nav({ dict, topbar, locale }) {
                       </button>
                     </li>
                   ))}
-                  <li className="lang-group-label" role="presentation">Canada</li>
-                  <li className="lang-ca-row" role="presentation">
-                    {CANADIAN_CODES.map((code) => (
-                      <button
-                        key={code}
-                        className={code === locale ? "active" : ""}
-                        onClick={() => switchLocale(code)}
-                      >
-                        {code === "en-ca" ? "EN" : "FR"}
-                        {code === locale && <Check />}
-                      </button>
-                    ))}
-                  </li>
+                  {LOCALE_GROUPS.flatMap((group) => [
+                    <li key={`grp-${group.label}`} className="lang-group-label" role="presentation">{group.label}</li>,
+                    <li key={`row-${group.label}`} className="lang-ca-row" role="presentation">
+                      {group.codes.map((code) => (
+                        <button
+                          key={code}
+                          className={code === locale ? "active" : ""}
+                          onClick={() => switchLocale(code)}
+                        >
+                          {group.labels[code]}
+                          {code === locale && <Check />}
+                        </button>
+                      ))}
+                    </li>,
+                  ])}
                 </ul>
               )}
             </div>
@@ -140,7 +146,7 @@ export default function Nav({ dict, topbar, locale }) {
         )}
         <div className="dr-lang">
           <div className="dr-lang-head"><Globe /> {dict.language}</div>
-          {LOCALES.filter((l) => !CANADIAN_CODES.includes(l.code)).map((l) => (
+          {LOCALES.filter((l) => !GROUPED_CODES.includes(l.code)).map((l) => (
             <button
               key={l.code}
               className={`dr-lang-opt${l.code === locale ? " active" : ""}`}
@@ -150,21 +156,23 @@ export default function Nav({ dict, topbar, locale }) {
               {l.code === locale && <Check />}
             </button>
           ))}
-          <div className="dr-canada-group">
-            <span className="dr-canada-label">Canada</span>
-            <div className="dr-canada-row">
-              {CANADIAN_CODES.map((code) => (
-                <button
-                  key={code}
-                  className={`dr-lang-opt${code === locale ? " active" : ""}`}
-                  onClick={() => switchLocale(code)}
-                >
-                  <span>{code === "en-ca" ? "EN" : "FR"}</span>
-                  {code === locale && <Check />}
-                </button>
-              ))}
+          {LOCALE_GROUPS.map((group) => (
+            <div key={group.label} className="dr-canada-group">
+              <span className="dr-canada-label">{group.label}</span>
+              <div className="dr-canada-row">
+                {group.codes.map((code) => (
+                  <button
+                    key={code}
+                    className={`dr-lang-opt${code === locale ? " active" : ""}`}
+                    onClick={() => switchLocale(code)}
+                  >
+                    <span>{group.labels[code]}</span>
+                    {code === locale && <Check />}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </>

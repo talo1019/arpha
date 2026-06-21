@@ -10,15 +10,19 @@ import UnlockShowcase from "@/components/UnlockShowcase";
 import UsesShowcase from "@/components/UsesShowcase";
 
 const CANADIAN_LOCALES = ["en-ca", "fr-ca"];
+const JAPAN_LOCALES = ["ja", "en-jp"];
 const GLOBAL_FEATURED = ["uvo-2", "duo", "battery-k25", "m660"];
 const CA_FEATURED = ["gf7-toothbrush", "x1-beauty", "p4-power-strip", "dx95-cam"];
+const JP_FEATURED = ["aku"];
 
 const STD_ICONS = [ShieldCheck, Weather, Lock2fa, Doc];
 const TRUST_ICONS = [Globe, Check, Battery, Headset];
 
 export default function Home({ params }) {
   const t = getDictionary(params.lang).home;
-  const featuredSlugs = CANADIAN_LOCALES.includes(params.lang) ? CA_FEATURED : GLOBAL_FEATURED;
+  const featuredSlugs = CANADIAN_LOCALES.includes(params.lang) ? CA_FEATURED
+    : JAPAN_LOCALES.includes(params.lang) ? JP_FEATURED
+    : GLOBAL_FEATURED;
   const featured = featuredSlugs.map((s) => PRODUCTS.find((p) => p.slug === s)).filter(Boolean);
 
   return (
