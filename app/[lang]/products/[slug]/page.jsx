@@ -46,7 +46,7 @@ export default function ProductPage({ params }) {
           </div>
 
           <div className="pdp-hero">
-            <div className={`pdp-stage reveal${p.image ? " has-photo" : ""}`}>
+            <div className={`pdp-stage reveal${p.image && !p.imageLight ? " has-photo" : ""}`}>
               {p.badge && <span className={`badge${p.badgeAlt ? " alt" : ""}`}>{p.badge}</span>}
               {p.image
                 ? <img className="pdp-photo" src={p.image} alt={p.model ? `${p.name} ${p.model}` : p.name} style={p.imageStyle || {}} />

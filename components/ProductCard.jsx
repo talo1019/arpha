@@ -6,7 +6,7 @@ export default function ProductCard({ p, localized }) {
   const feature = localized?.feature || p.feature;
   return (
     <LocaleLink href={`/products/${p.slug}`} className="card reveal">
-      <div className={`ph${p.image ? " has-photo" : ""}`}>
+      <div className={`ph${p.image && !p.imageLight ? " has-photo" : ""}`}>
         {p.badge && <span className={`badge${p.badgeAlt ? " alt" : ""}`}>{p.badge}</span>}
         {p.image
           ? <img className="prod-photo" src={p.image} alt={`${p.name} ${p.model}`} loading="lazy" style={p.imageStyle || undefined} />
