@@ -1,8 +1,8 @@
 import LocaleLink from "@/components/LocaleLink";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import DeviceVisual from "@/components/DeviceVisual";
 import ProductCard from "@/components/ProductCard";
-import { PRODUCTS, getProduct, getRelated } from "@/lib/products";
+import { PRODUCTS, getProduct, getRelated, getProductsForLocale } from "@/lib/products";
 import { getDictionary } from "@/lib/i18n";
 import * as Icons from "@/components/Icons";
 import {
@@ -26,6 +26,8 @@ export function generateMetadata({ params }) {
 export default function ProductPage({ params }) {
   const p = getProduct(params.slug);
   if (!p) notFound();
+  const localeProducts = getProductsForLocale(params.lang);
+  if (!localeProducts.find((lp) => lp.slug === p.slug)) redirect(`/${params.lang}/products`);
   const t = getDictionary(params.lang);
   const d = t.productDetail;
   const pc = t.productContent?.[p.slug] || {};
