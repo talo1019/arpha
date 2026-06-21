@@ -9,7 +9,7 @@ export default function ProductCard({ p, localized }) {
       <div className={`ph${p.image && !p.imageLight ? " has-photo" : ""}`}>
         {p.badge && <span className={`badge${p.badgeAlt ? " alt" : ""}`}>{p.badge}</span>}
         {p.image
-          ? <img className="prod-photo" src={p.image} alt={`${p.name} ${p.model}`} loading="lazy" style={p.imageStyle || undefined} />
+          ? <img className={`prod-photo${p.imageFill ? " fill" : ""}`} src={p.image} alt={`${p.name} ${p.model}`} loading="lazy" style={p.imageStyle || undefined} />
           : <DeviceVisual type={p.deviceType} />}
       </div>
       <div className="body">
