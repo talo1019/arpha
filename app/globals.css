@@ -586,7 +586,7 @@ footer{background:var(--ink);color:#bdb3a2;padding:72px 0 30px}
   .uss-row{min-width:100%;scroll-snap-align:start;flex-shrink:0;border:none;border-radius:0;overflow:hidden;padding:0;display:flex;flex-direction:column;background:var(--surface)}
   .uss-row:hover,.uss-row.active{background:var(--surface)}
   .uss-row::before{display:none}
-  .uss-slide-img{display:block;width:100%;aspect-ratio:1/1;overflow:hidden;flex-shrink:0}
+  .uss-slide-img{display:block;width:100%;height:320px;overflow:hidden;flex-shrink:0}
   .uss-slide-img img{width:100%;height:100%;object-fit:cover;display:block}
   .uss-slide-text{display:block;padding:22px 24px 28px;border-top:1px solid var(--line)}
   .uss-slide-text .uss-tag{color:var(--bronze)}
