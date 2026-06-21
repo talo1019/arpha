@@ -9,15 +9,17 @@ import {
 import UnlockShowcase from "@/components/UnlockShowcase";
 import UsesShowcase from "@/components/UsesShowcase";
 
-const featured = ["uvo-2", "duo", "battery-k25", "m660"]
-  .map((s) => PRODUCTS.find((p) => p.slug === s))
-  .filter(Boolean);
+const CANADIAN_LOCALES = ["en-ca", "fr-ca"];
+const GLOBAL_FEATURED = ["uvo-2", "duo", "battery-k25", "m660"];
+const CA_FEATURED = ["gf7-toothbrush", "x1-beauty", "p4-power-strip", "dx95-cam"];
 
 const STD_ICONS = [ShieldCheck, Weather, Lock2fa, Doc];
 const TRUST_ICONS = [Globe, Check, Battery, Headset];
 
 export default function Home({ params }) {
   const t = getDictionary(params.lang).home;
+  const featuredSlugs = CANADIAN_LOCALES.includes(params.lang) ? CA_FEATURED : GLOBAL_FEATURED;
+  const featured = featuredSlugs.map((s) => PRODUCTS.find((p) => p.slug === s)).filter(Boolean);
 
   return (
     <>

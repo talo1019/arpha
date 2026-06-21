@@ -29,7 +29,7 @@ export default function ProductPage({ params }) {
   const t = getDictionary(params.lang);
   const d = t.productDetail;
   const pc = t.productContent?.[p.slug] || {};
-  const related = getRelated(p.slug, 3);
+  const related = getRelated(p.slug, 3, params.lang);
   const save = p.was ? p.was - p.price : 0;
 
   return (

@@ -1,6 +1,6 @@
 import LocaleLink from "@/components/LocaleLink";
 import ProductCard from "@/components/ProductCard";
-import { CATEGORIES, getByCategory } from "@/lib/products";
+import { getCategoriesForLocale, getByCategory } from "@/lib/products";
 import { getDictionary } from "@/lib/i18n";
 
 export function generateMetadata({ params }) {
@@ -26,8 +26,8 @@ export default function ProductsPage({ params }) {
 
       <section className="block">
         <div className="wrap">
-          {CATEGORIES.map((cat) => {
-            const items = getByCategory(cat.key);
+          {getCategoriesForLocale(params.lang).map((cat) => {
+            const items = getByCategory(cat.key, params.lang);
             if (!items.length) return null;
             const catT = p.categories?.[cat.key] || cat;
             return (
