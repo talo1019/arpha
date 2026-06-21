@@ -40,7 +40,7 @@ export default function ProductsPage({ params }) {
                   <span className="ct-meta">{items.length} {items.length === 1 ? p.model : p.models}</span>
                 </div>
                 <div className="prod-grid">
-                  {items.map((item) => <ProductCard key={item.slug} p={item} />)}
+                  {items.map((item) => <ProductCard key={item.slug} p={item} localized={t.productContent?.[item.slug]} />)}
                 </div>
               </div>
             );

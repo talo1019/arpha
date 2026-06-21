@@ -28,6 +28,7 @@ export default function ProductPage({ params }) {
   if (!p) notFound();
   const t = getDictionary(params.lang);
   const d = t.productDetail;
+  const pc = t.productContent?.[p.slug] || {};
   const related = getRelated(p.slug, 3);
   const save = p.was ? p.was - p.price : 0;
 
@@ -54,7 +55,7 @@ export default function ProductPage({ params }) {
               <div className="cat">{p.category}{p.sub ? ` · ${p.sub}` : ""}</div>
               <h1>{p.name}</h1>
               {p.model && <div className="model">{d.model} {p.model}</div>}
-              <p className="tagline">{p.tagline}</p>
+              <p className="tagline">{pc.tagline || p.tagline}</p>
 
               <div className="pdp-price">
                 <span className="now">${p.price}</span>
@@ -63,7 +64,7 @@ export default function ProductPage({ params }) {
               </div>
 
               <div className="pdp-feat">
-                {p.feature.map((f) => <span className="chip" key={f}>{f}</span>)}
+                {(pc.feature || p.feature).map((f) => <span className="chip" key={f}>{f}</span>)}
               </div>
 
               <div className="pdp-actions">
@@ -87,10 +88,10 @@ export default function ProductPage({ params }) {
         <div className="wrap">
           <div className="sec-head reveal">
             <div><span className="eyebrow">{d.highlights.eyebrow}</span><h2 className="h2">{d.highlights.heading}</h2></div>
-            <p>{p.description}</p>
+            <p>{pc.description || p.description}</p>
           </div>
           <div className="hl-grid">
-            {p.highlights.map((h) => {
+            {(pc.highlights || p.highlights).map((h) => {
               const Icon = Icons[h.icon] || ShieldCheck;
               return (
                 <div className="hl reveal" key={h.title}>
@@ -132,7 +133,7 @@ export default function ProductPage({ params }) {
             <p>{d.specs.sub}</p>
           </div>
           <div className="spec-wrap reveal">
-            {p.specs.map((row) => (
+            {(pc.specs || p.specs).map((row) => (
               <div className="spec-row" key={row.k}>
                 <span className="k">{row.k}</span>
                 <span className="v">{row.v}</span>
@@ -151,7 +152,7 @@ export default function ProductPage({ params }) {
               <LocaleLink href="/products" className="btn btn--ghost">{d.related.cta} <ArrowRight /></LocaleLink>
             </div>
             <div className="prod-grid cols-3">
-              {related.map((r) => <ProductCard key={r.slug} p={r} />)}
+              {related.map((r) => <ProductCard key={r.slug} p={r} localized={t.productContent?.[r.slug]} />)}
             </div>
           </div>
         </section>

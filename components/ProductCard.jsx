@@ -1,7 +1,9 @@
 import LocaleLink from "@/components/LocaleLink";
 import DeviceVisual from "./DeviceVisual";
 
-export default function ProductCard({ p }) {
+export default function ProductCard({ p, localized }) {
+  const tagline = localized?.tagline || p.tagline;
+  const feature = localized?.feature || p.feature;
   return (
     <LocaleLink href={`/products/${p.slug}`} className="card reveal">
       <div className={`ph${p.image ? " has-photo" : ""}`}>
@@ -13,9 +15,9 @@ export default function ProductCard({ p }) {
       <div className="body">
         <div className="cat">{p.category}{p.sub ? ` · ${p.sub}` : ""}</div>
         <h3>{p.name}{p.model && p.name !== p.model ? ` ${p.model}` : ""}</h3>
-        <p className="desc">{p.tagline}</p>
+        <p className="desc">{tagline}</p>
         <div className="feat">
-          {p.feature.slice(0, 3).map((f) => (
+          {feature.slice(0, 3).map((f) => (
             <span className="chip" key={f}>{f}</span>
           ))}
         </div>

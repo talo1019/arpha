@@ -65,7 +65,7 @@ export default function Home({ params }) {
             <p style={{ color: "var(--muted)", marginTop: "12px", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>{t.products.sub}</p>
           </div>
           <div className="prod-grid">
-            {featured.map((p) => <ProductCard key={p.slug} p={p} />)}
+            {featured.map((p) => <ProductCard key={p.slug} p={p} localized={getDictionary(params.lang).productContent?.[p.slug]} />)}
           </div>
           <div className="reveal" style={{ marginTop: "40px", textAlign: "center" }}>
             <LocaleLink href="/products" className="btn btn--ghost">{t.products.cta} <ArrowRight /></LocaleLink>
