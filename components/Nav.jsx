@@ -10,7 +10,7 @@ const NAV_KEYS = [
   { href: "/products", key: "products" },
   { href: "/plans", key: "plans" },
   { href: "/accessories", key: "accessories" },
-  { href: "/support", key: "support" },
+  { href: "https://support.arpha.com", key: "support", external: true },
 ];
 
 export default function Nav({ dict, topbar, locale }) {
@@ -69,11 +69,10 @@ export default function Nav({ dict, topbar, locale }) {
           </LocaleLink>
 
           <nav className="nav-links">
-            {NAV_KEYS.map((l) => (
-              <LocaleLink key={l.href} href={l.href} className={isActive(l.href) ? "active" : ""}>
-                {dict[l.key]}
-              </LocaleLink>
-            ))}
+            {NAV_KEYS.map((l) => l.external
+              ? <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">{dict[l.key]}</a>
+              : <LocaleLink key={l.href} href={l.href} className={isActive(l.href) ? "active" : ""}>{dict[l.key]}</LocaleLink>
+            )}
           </nav>
 
           <div className="nav-right">
@@ -120,9 +119,10 @@ export default function Nav({ dict, topbar, locale }) {
           </LocaleLink>
           <button className="icon-btn" aria-label={dict.closeMenu} onClick={() => setOpen(false)}><Close /></button>
         </div>
-        {NAV_KEYS.map((l) => (
-          <LocaleLink key={l.href} href={l.href} onClick={() => setOpen(false)}>{dict[l.key]}</LocaleLink>
-        ))}
+        {NAV_KEYS.map((l) => l.external
+          ? <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>{dict[l.key]}</a>
+          : <LocaleLink key={l.href} href={l.href} onClick={() => setOpen(false)}>{dict[l.key]}</LocaleLink>
+        )}
         <div className="dr-lang">
           <div className="dr-lang-head"><Globe /> {dict.language}</div>
           {LOCALES.map((l) => (
