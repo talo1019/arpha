@@ -123,7 +123,8 @@ header.nav.scrolled{border-color:var(--line);background:rgba(246,242,235,.94)}
   padding:11px 14px;border:none;border-radius:11px;background:transparent;cursor:pointer;
   text-align:left;transition:.2s;
 }
-.lang-menu button:hover{background:rgba(23,19,15,.06)}
+.lang-menu button:hover,.lang-menu a:hover{background:rgba(23,19,15,.06)}
+.lang-menu a{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;font-family:var(--body);font-weight:500;font-size:.92rem;color:var(--ink);padding:11px 14px;border-radius:11px;text-decoration:none;transition:.2s}
 .lang-menu button.active{font-weight:700;color:var(--bronze-deep)}
 .lang-menu button svg{width:16px;height:16px;color:var(--bronze)}
 

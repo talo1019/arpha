@@ -5,6 +5,11 @@ import LocaleLink from "./LocaleLink";
 import { Search, Menu, Close, Globe, Check } from "./Icons";
 import { LOCALES, LOCALE_CODES } from "@/lib/i18n";
 
+const EXTERNAL_LOCALES = [
+  { label: "Taiwan", url: "https://arpha.com.tw" },
+];
+const HIDDEN_LOCALE_CODES = ["zh-hant"];
+
 const LOCALE_GROUPS = [
   { label: "Japan", codes: ["ja", "en-jp"], labels: { "ja": "JP", "en-jp": "EN" } },
   { label: "Canada", codes: ["en-ca", "fr-ca"], labels: { "en-ca": "EN", "fr-ca": "FR" } },
@@ -97,7 +102,7 @@ export default function Nav({ dict, topbar, locale }) {
               </button>
               {langOpen && (
                 <ul className="lang-menu" role="listbox" aria-label={dict.language}>
-                  {LOCALES.filter((l) => !GROUPED_CODES.includes(l.code)).map((l) => (
+                  {LOCALES.filter((l) => !GROUPED_CODES.includes(l.code) && !HIDDEN_LOCALE_CODES.includes(l.code)).map((l) => (
                     <li key={l.code} role="option" aria-selected={l.code === locale}>
                       <button
                         className={l.code === locale ? "active" : ""}
@@ -106,6 +111,13 @@ export default function Nav({ dict, topbar, locale }) {
                         <span>{l.label}</span>
                         {l.code === locale && <Check />}
                       </button>
+                    </li>
+                  ))}
+                  {EXTERNAL_LOCALES.map((l) => (
+                    <li key={l.label} role="option" aria-selected={false}>
+                      <a href={l.url} target="_blank" rel="noopener noreferrer" onClick={() => setLangOpen(false)}>
+                        <span>{l.label}</span>
+                      </a>
                     </li>
                   ))}
                   {LOCALE_GROUPS.flatMap((group) => [
@@ -146,7 +158,7 @@ export default function Nav({ dict, topbar, locale }) {
         )}
         <div className="dr-lang">
           <div className="dr-lang-head"><Globe /> {dict.language}</div>
-          {LOCALES.filter((l) => !GROUPED_CODES.includes(l.code)).map((l) => (
+          {LOCALES.filter((l) => !GROUPED_CODES.includes(l.code) && !HIDDEN_LOCALE_CODES.includes(l.code)).map((l) => (
             <button
               key={l.code}
               className={`dr-lang-opt${l.code === locale ? " active" : ""}`}
@@ -155,6 +167,18 @@ export default function Nav({ dict, topbar, locale }) {
               <span>{l.label}</span>
               {l.code === locale && <Check />}
             </button>
+          ))}
+          {EXTERNAL_LOCALES.map((l) => (
+            <a
+              key={l.label}
+              href={l.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="dr-lang-opt"
+              onClick={() => setOpen(false)}
+            >
+              <span>{l.label}</span>
+            </a>
           ))}
           {LOCALE_GROUPS.map((group) => (
             <div key={group.label} className="dr-canada-group">
