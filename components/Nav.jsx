@@ -120,21 +120,23 @@ export default function Nav({ dict, topbar, locale }) {
                       </a>
                     </li>
                   ))}
-                  {LOCALE_GROUPS.flatMap((group) => [
-                    <li key={`grp-${group.label}`} className="lang-group-label" role="presentation">{group.label}</li>,
-                    <li key={`row-${group.label}`} className="lang-ca-row" role="presentation">
-                      {group.codes.map((code) => (
-                        <button
-                          key={code}
-                          className={code === locale ? "active" : ""}
-                          onClick={() => switchLocale(code)}
-                        >
-                          {group.labels[code]}
-                          {code === locale && <Check />}
-                        </button>
-                      ))}
-                    </li>,
-                  ])}
+                  {LOCALE_GROUPS.map((group) => (
+                    <li key={`grp-${group.label}`} className="lang-group-row" role="presentation">
+                      <span className="lang-group-name">{group.label}</span>
+                      <div className="lang-group-btns">
+                        {group.codes.map((code) => (
+                          <button
+                            key={code}
+                            className={code === locale ? "active" : ""}
+                            onClick={() => switchLocale(code)}
+                          >
+                            {group.labels[code]}
+                            {code === locale && <Check />}
+                          </button>
+                        ))}
+                      </div>
+                    </li>
+                  ))}
                 </ul>
               )}
             </div>

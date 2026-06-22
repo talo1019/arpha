@@ -263,12 +263,13 @@ section.block{padding:clamp(70px,9vw,118px) 0}
 .dev-bulb.big::before{width:70px;height:70px}
 .dev-bulb.big::after{width:36px;height:38px}
 /* nav Canada group */
-.lang-group-label{padding:8px 16px 2px;font-size:.68rem;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);pointer-events:none;list-style:none}
-.lang-ca-row{display:flex;gap:4px;padding:4px 10px 8px;list-style:none}
-.lang-ca-row button{flex:1;text-align:center;padding:5px 10px;border-radius:6px;border:1px solid var(--line);background:none;cursor:pointer;font-size:.82rem;font-family:var(--mono);color:var(--ink);transition:background .15s,color .15s}
-.lang-ca-row button:hover{background:var(--panel)}
-.lang-ca-row button.active{background:var(--bronze);color:#fff;border-color:var(--bronze)}
-.lang-ca-row button .ico{width:14px;height:14px;margin-left:4px;vertical-align:middle}
+.lang-group-row{display:flex;align-items:center;justify-content:space-between;padding:3px 14px;list-style:none}
+.lang-group-name{font-family:var(--body);font-size:.92rem;font-weight:500;color:var(--ink)}
+.lang-group-btns{display:flex;gap:4px}
+.lang-group-btns button{padding:4px 10px;border-radius:6px;border:1px solid var(--line);background:none;cursor:pointer;font-size:.82rem;font-family:var(--mono);color:var(--ink);transition:background .15s,color .15s;display:flex;align-items:center;gap:4px}
+.lang-group-btns button:hover{background:var(--panel)}
+.lang-group-btns button.active{background:var(--bronze);color:#fff;border-color:var(--bronze)}
+.lang-group-btns button svg{width:14px;height:14px}
 /* drawer Canada group */
 .dr-canada-group{margin-top:2px;padding-top:10px;border-top:1px solid var(--line)}
 .dr-canada-label{display:block;padding-bottom:8px;font-size:.68rem;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
