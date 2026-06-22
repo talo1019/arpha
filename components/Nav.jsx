@@ -11,6 +11,7 @@ const EXTERNAL_LOCALES = [
 const HIDDEN_LOCALE_CODES = ["zh-hant"];
 
 const LOCALE_GROUPS = [
+  { label: "U.S.", codes: ["en", "es-us"], labels: { "en": "EN", "es-us": "ES" } },
   { label: "Japan", codes: ["ja", "en-jp"], labels: { "ja": "JP", "en-jp": "EN" } },
   { label: "Canada", codes: ["en-ca", "fr-ca"], labels: { "en-ca": "EN", "fr-ca": "FR" } },
 ];
