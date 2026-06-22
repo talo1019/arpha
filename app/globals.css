@@ -271,9 +271,13 @@ section.block{padding:clamp(70px,9vw,118px) 0}
 .lang-group-btns button.active{background:var(--bronze);color:#fff;border-color:var(--bronze)}
 .lang-group-btns button svg{width:14px;height:14px}
 /* drawer Canada group */
-.dr-canada-group{margin-top:2px;padding-top:10px;border-top:1px solid var(--line)}
-.dr-canada-label{display:block;padding-bottom:8px;font-size:.68rem;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.dr-canada-row{display:flex;gap:8px}
+.dr-group-row{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-top:1px solid var(--line)}
+.dr-group-name{font-family:var(--body);font-size:1.02rem;font-weight:500;color:var(--ink)}
+.dr-group-btns{display:flex;gap:6px}
+.dr-group-btn{padding:5px 12px;border-radius:6px;border:1px solid var(--line);background:none;cursor:pointer;font-size:.85rem;font-family:var(--mono);color:var(--ink);transition:background .15s,color .15s;display:flex;align-items:center;gap:4px}
+.dr-group-btn:hover{background:var(--panel)}
+.dr-group-btn.active{background:var(--bronze);color:#fff;border-color:var(--bronze)}
+.dr-group-btn svg{width:14px;height:14px}
 
 /* unlock methods */
 .unlock{background:var(--surface)}

@@ -183,16 +183,16 @@ export default function Nav({ dict, topbar, locale }) {
             </a>
           ))}
           {LOCALE_GROUPS.map((group) => (
-            <div key={group.label} className="dr-canada-group">
-              <span className="dr-canada-label">{group.label}</span>
-              <div className="dr-canada-row">
+            <div key={group.label} className="dr-group-row">
+              <span className="dr-group-name">{group.label}</span>
+              <div className="dr-group-btns">
                 {group.codes.map((code) => (
                   <button
                     key={code}
-                    className={`dr-lang-opt${code === locale ? " active" : ""}`}
+                    className={`dr-group-btn${code === locale ? " active" : ""}`}
                     onClick={() => switchLocale(code)}
                   >
-                    <span>{group.labels[code]}</span>
+                    {group.labels[code]}
                     {code === locale && <Check />}
                   </button>
                 ))}
