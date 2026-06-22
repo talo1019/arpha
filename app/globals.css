@@ -142,6 +142,7 @@ header.nav.scrolled{border-color:var(--line);background:rgba(246,242,235,.94)}
   padding:11px 2px;border:none;background:transparent;cursor:pointer;text-align:left;
 }
 .dr-lang-opt.active{font-weight:700;color:var(--bronze-deep)}
+.dr-lang a.dr-lang-opt{font-family:var(--body);font-size:1.02rem;padding:11px 2px;border-bottom:none;text-decoration:none}
 .dr-lang-opt svg{width:17px;height:17px;color:var(--bronze)}
 .burger{display:none}
 /* mobile drawer */
