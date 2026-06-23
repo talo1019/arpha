@@ -17,6 +17,10 @@ export const Check = (p) => (
   <svg viewBox="0 0 24 24" {...s} {...p}><path d="M20 6 9 17l-5-5" /></svg>
 );
 
+export const Users = (p) => (
+  <svg viewBox="0 0 24 24" {...s} {...p}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+);
+
 /* unlock methods */
 export const Face = (p) => (
   <svg viewBox="0 0 24 24" {...s} {...p}><circle cx="12" cy="9" r="4" /><path d="M5 20c0-3.3 3.1-5 7-5s7 1.7 7 5" /><path d="M9 9h.01M12 7v2.5M15 9h.01" /></svg>
