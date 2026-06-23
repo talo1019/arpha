@@ -1,5 +1,4 @@
 import LocaleLink from "@/components/LocaleLink";
-import HeroLock from "@/components/HeroLock";
 import ProductCard from "@/components/ProductCard";
 import { PRODUCTS } from "@/lib/products";
 import { getDictionary } from "@/lib/i18n";
@@ -44,7 +43,6 @@ export default function Home({ params }) {
               ))}
             </div>
           </div>
-          <HeroLock />
         </div>
       </section>
 
