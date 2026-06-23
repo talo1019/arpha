@@ -71,7 +71,6 @@ export default function ProductPage({ params }) {
 
               <div className="pdp-actions">
                 <button className="btn btn--bronze">{d.addToCart} <ArrowRight /></button>
-                <LocaleLink href="/support" className="btn btn--ghost">{d.talkToExpert}</LocaleLink>
               </div>
 
               <div className="pdp-trust">
