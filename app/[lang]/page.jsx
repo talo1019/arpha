@@ -28,7 +28,7 @@ export default function Home({ params }) {
     <>
       {/* hero */}
       <section className="hero">
-        <div className="wrap hero-grid">
+        <div className="hero-grid">
           <div className="hero-copy">
             <span className="eyebrow">{t.hero.eyebrow}</span>
             <h1>{t.hero.title1}<br />{t.hero.title2}<span className="soft">{t.hero.titleSoft}</span></h1>
@@ -42,6 +42,9 @@ export default function Home({ params }) {
                 <span key={m.l}><b>{m.v}</b> {m.l}</span>
               ))}
             </div>
+          </div>
+          <div className="hero-img">
+            <img src="/products/hero3.jpg" alt="Arpha smart lock and video doorbell" />
           </div>
         </div>
       </section>
