@@ -1,4 +1,5 @@
 import LocaleLink from "@/components/LocaleLink";
+import HeroLock from "@/components/HeroLock";
 import ProductCard from "@/components/ProductCard";
 import { PRODUCTS } from "@/lib/products";
 import { getDictionary } from "@/lib/i18n";
@@ -28,7 +29,7 @@ export default function Home({ params }) {
     <>
       {/* hero */}
       <section className="hero">
-        <div className="hero-grid">
+        <div className="wrap hero-grid">
           <div className="hero-copy">
             <span className="eyebrow">{t.hero.eyebrow}</span>
             <h1>{t.hero.title1}<br />{t.hero.title2}<span className="soft">{t.hero.titleSoft}</span></h1>
@@ -43,9 +44,7 @@ export default function Home({ params }) {
               ))}
             </div>
           </div>
-          <div className="hero-img">
-            <img src="/products/hero3.jpg" alt="Arpha smart lock and video doorbell" />
-          </div>
+          <HeroLock />
         </div>
       </section>
 
