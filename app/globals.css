@@ -585,9 +585,9 @@ footer{background:var(--ink);color:#bdb3a2;padding:72px 0 30px}
 .reveal.in{opacity:1;transform:none}
 
 /* brand logo (replaces text wordmark) */
-.brand-logo{height:24px;width:auto;display:block}
-.foot-logo{height:30px}
-.drawer .brand-logo{height:26px}
+.brand-logo{height:34px;width:auto;display:block}
+.foot-logo{height:42px}
+.drawer .brand-logo{height:36px}
 
 /* real product photos on cards / pdp (rendered on black to blend with shot) */
 .card .ph.has-photo{background:#000}
